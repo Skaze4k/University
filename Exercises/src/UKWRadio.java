@@ -1,10 +1,11 @@
 public class UKWRadio {
 
     private double frequenz;
-    private int station;
+    private double[] station;
 
-    public UKWRadio() {
-        frequenz = 87.5;
+    public UKWRadio(int n) {
+        this.frequenz = 87.5;
+        this.station = new double[n];
     }
 
     public double getAktuelleFrequenz() {
@@ -12,19 +13,30 @@ public class UKWRadio {
     }
 
     public void frequenzVerringern() {
-        frequenz -= 0.5;
+        if(this.frequenz==87.5){
+
+        }
+        else {
+            this.frequenz -= 0.5;
+        }
     }
 
     public void frequenzErhoehen() {
-        frequenz += 0.5;
+        if(this.frequenz==108.0){
+
+        }
+        else {
+            this.frequenz += 0.5;
+        }
     }
 
     public void frequenzSpeichern(int taste) {
-
+        station[taste] = getAktuelleFrequenz();
     }
 
-    public void frequenzEinstellen(int taste) {
-
+    public double frequenzEinstellen(int taste) {
+        this.frequenz = station[taste];
+        return frequenz;
     }
 
 }
