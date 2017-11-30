@@ -1,7 +1,7 @@
 public class UKWRadio {
 
     private double frequenz;
-    private double[] station;
+    private double station[];
 
     public UKWRadio(int n) {
         this.frequenz = 87.5;
